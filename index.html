@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="site3.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="paragraph">
+      <h1>Proposed Schema for GIMP Extension API</h1>
+      <h2>Details</h2>
+    </div>
+
+    <div class="box">
+      <h1>/repository Endpoints</h1>
+      <div class="endpoint">
+        <h2>/repository/metadata</h2>
+        <h3><b>HTTP Method: </b>GET</h3>
+        <ul>
+          <li><b>ID: </b>Endpoint-01</li>
+          <li>
+            <b>Description:</b>Pull full list of extension metadata for
+            repository.
+          </li>
+        </ul>
+      </div>
+      <div class="endpoint">
+        <h2>/repository/extensions/{id}/{version}</h2>
+        <h3><b>HTTP Method: </b>GET</h3>
+        <ul>
+          <li><b>ID:</b>Endpoint-02</li>
+          <li><b>Description: </b>Download extension package</li>
+        </ul>
+      </div>
+      <div class="endpoint">
+        <h2>/repository/search/{searchQuery}</h2>
+        <h3><b>HTTP Method: </b>GET</h3>
+        <ul>
+          <li><b>ID:</b>Endpoint-03</li>
+          <li>
+            <b>Description: </b>Searches repository for list of extensions,
+            filtered by search queries.
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="box">
+      <h1>/extensions Endpoints</h1>
+      <div class="endpoint">
+        <h2>/extensions</h2>
+        <h3><b>HTTP Method: </b>POST</h3>
+        <ul>
+          <li><b>ID:</b>Endpoint-04</li>
+          <li><b>Description: </b>Upload new extension</li>
+        </ul>
+      </div>
+      <div class="endpoint">
+        <h3><b>HTTP Method: </b>GET</h3>
+        <ul>
+          <li><b>ID:</b>Endpoint-05</li>
+          <li>
+            <b>Description: </b>Returns package containing metadata details for
+            single extension
+          </li>
+        </ul>
+      </div>
+      <div class="endpoint">
+        <h3><b>HTTP Method: </b>PUT</h3>
+        <ul>
+          <li><b>ID:</b>Endpoint-06</li>
+          <li><b>Description: </b>Updates the version of an extension</li>
+        </ul>
+      </div>
+      <div class="endpoint">
+        <h3><b>HTTP Method: </b>DELETE</h3>
+        <ul>
+          <li><b>ID:</b>Endpoint-07</li>
+          <li>
+            <b>Description: </b>Deletes an extension and all its versions from
+            the repository.
+          </li>
+        </ul>
+      </div>
+      <div class="endpoint">
+        <h2>/extensions/{id}/flags</h2>
+        <h3><b>HTTP Method: </b>POST</h3>
+        <ul>
+          <li><b>ID:</b>Endpoint-08</li>
+          <li>
+            <b>Description: </b>Flags an extension for potentially inappropriate
+            content or poor quality / malicious software.
+          </li>
+        </ul>
+      </div>
+      <div class="endpoint">
+        <h2>/extensions/santizeExtension</h2>
+        <h3><b>HTTP Method: </b>PUT</h3>
+        <ul>
+          <li><b>ID:</b>Endpoint-09</li>
+          <li>
+            <b>Description: </b>Process for ensuring that extensions meet
+            metadata and API guidelines before uploading it to the repository.
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="box">
+      <h1>/auth Endpoints</h1>
+      <div class="endpoint">
+        <h2>/auth/register</h2>
+        <h3><b>HTTP Method: </b>POST</h3>
+        <ul>
+          <li><b>ID:</b>Endpoint-10</li>
+          <li><b>Description: </b>Register new user.</li>
+        </ul>
+      </div>
+      <div class="endpoint">
+        <h2>/auth/login</h2>
+        <h3><b>HTTP Method: </b>POST</h3>
+        <ul>
+          <li><b>ID:</b>Endpoint-11</li>
+          <li><b>Description: </b>Authenticates a user for a new session.</li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
